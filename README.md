@@ -408,7 +408,42 @@ Inject out-of-range Modbus value (`999°C`) and observe:
 - Audit trail validation via CloudTrail
 - Recovery logic in Lambda (e.g., quarantine device, log incident)
 
-Would you like help drafting the Lambda handler for fault detection or preparing a QuickSight dashboard to visualize anomalies and alerts?
+---
+Here’s a modular hardware setup for your capstone, Shilpa—designed to be **low-cost**, **realistic**, and aligned with your goals in IoT, Modbus simulation, ML/AI, and secure integration/test.
 
-We’re building a portfolio that’s not just technically rich—but audit-ready, governance-aligned, and recruiter-friendly. Let’s keep going.
+---
+
+## 🧱 Core Hardware Components
+
+| Purpose | Hardware | Notes |
+|--------|----------|-------|
+| **IoT Sensor Node** | ESP32 DevKit or Raspberry Pi 4 | ESP32 is cheaper (~SGD $10–15), supports Wi-Fi, Modbus via UART |
+| **Modbus Simulation** | USB-to-RS485 adapter + PC or Pi | For Modbus RTU; use Python + `pymodbus` |
+| **Environmental Sensors** | DHT22 (Temp/Humidity), MQ135 (Air Quality), Vibration sensor | Connect to ESP32 or Pi via GPIO |
+| **Edge Gateway (optional)** | Raspberry Pi 4 or Pi Zero W | Acts as Greengrass host or Modbus TCP bridge |
+| **Thermal Chamber (simulated)** | DIY setup with heat lamp + fan + relay | Controlled via GPIO or Modbus register |
+| **Power Supply** | USB 5V adapter or battery pack | Ensure stable voltage for ESP32/Pi |
+| **Connectivity** | Wi-Fi router or hotspot | Required for AWS IoT Core communication |
+
+---
+
+## 🧪 Optional Add-ons for QA & Stress Testing
+
+- **Relay Module**: To simulate actuator control (e.g., fan, heater)
+- **OLED Display**: For local sensor readouts
+- **Breadboard + Jumper Wires**: For prototyping
+- **Multimeter**: For debugging sensor connections
+
+---
+
+## 🧰 Local Development Setup
+
+- **Laptop/PC**: For Python scripting, Terraform, ML notebooks
+- **Python 3.9+**: With `pymodbus`, `boto3`, `scikit-learn`, `shap`
+- **AWS CLI + Terraform**: For infrastructure deployment
+- **VS Code**: With AWS Toolkit and GitHub integration
+
+---
+
+Would you like help wiring the sensors to ESP32, setting up Modbus RTU/TCP simulation, or preparing a Greengrass deployment guide? I can also help you annotate your hardware setup for portfolio presentation and audit readiness.
 
